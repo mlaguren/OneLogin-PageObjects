@@ -4,6 +4,7 @@
 class LoginPage
   include Capybara::DSL
   
+# Define elements for interaction
   def initialize
     @url = $SETUP['url']
     @email_fld = {"selector" => :id, "value"=>"email"}
