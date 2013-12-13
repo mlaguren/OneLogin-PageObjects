@@ -10,6 +10,8 @@ class LoginPage
     @email_fld = {"selector" => :id, "value"=>"email"}
     @password_fld = {"selector" => :id, "value" => "password"}
     @login_btn = {"selector" => :id, "value" => "login"}
+    @error = {"selector" => :id, "value" => "errors"}
+    @title = "OneLogin"
   end
   
   def login_as (email, password)
@@ -20,7 +22,7 @@ class LoginPage
   end
   
   def has_error_message
-    find('errors').text.should = "Invalid username or password"
+    find(@error['selector'], @error['value']).text.should match "Invalid username or password"
   end
   
   def forgot_password
@@ -42,5 +44,10 @@ class LoginPage
   def go_to_privacy
     find_link('privacy').click
   end
-  
+
+  def is_present
+    find(@email_fld['selector'], @email_fld['value'])
+    find(@password_fld['selector'], @password_fld['value'])
+    page.has_title? @title 
+  end  
 end
