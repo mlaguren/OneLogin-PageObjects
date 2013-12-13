@@ -1,6 +1,6 @@
 class ClientAppsPage
   include Capybara::DSL
-  include Topbar  
+  extend Topbar  
   
   def initialize
     @my_apps_tab = {"selector" => :id, "value"=>"tab_0"}

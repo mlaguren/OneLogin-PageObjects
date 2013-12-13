@@ -6,6 +6,7 @@ module Topbar
   end
 
   def logout
-    find(@logout['selector'], @logout['value').click
+    find(@logout['selector'], @logout['value']).click
   end
+
 end
