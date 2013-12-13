@@ -1,10 +1,10 @@
-class ClientAppsPage
+class ClientAppsPage < Topbar
   include Capybara::DSL
-  extend Topbar  
   
   def initialize
     @my_apps_tab = {"selector" => :id, "value"=>"tab_0"}
     @sub_menu = {"selector" => :xpath, "value" => ".//*[@class='submenu']/ul/li/a"}
+    super
   end
 
   def portal_tabs_are_enabled?
