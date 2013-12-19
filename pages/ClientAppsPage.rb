@@ -30,7 +30,7 @@ class ClientAppsPage < Topbar
     #test=find(:xpath, './/*[@style="display: inline;"]/div/a')
     #p test
     #test.click
-    find(:xpath, './/*[@style="display: inline;"]/div/a').click
+    find(:xpath, './/*[@class="app"]/img').click
   end
  
   def open_company_app
