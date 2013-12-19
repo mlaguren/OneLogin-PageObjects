@@ -1,1 +1,1 @@
-README common/* pages/*
+README app/**/**/*.rb website/**/*.rb
