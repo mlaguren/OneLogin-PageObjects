@@ -1,4 +1,4 @@
-class Topbar
+module Topbar
   def initialize
     @logo = {"selector" => :id, "value"=>"logo"}
     @logout = {"selector" => :xpath, "value" => ".//*[@id='current_user']/a"}
@@ -7,10 +7,6 @@ class Topbar
 
   def logout
     find(@logout['selector'], @logout['value']).click
-  end
- 
-  def test
-    p "test"
   end
 
 end

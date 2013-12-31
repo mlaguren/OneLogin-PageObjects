@@ -1,4 +1,5 @@
-class ClientAppsPage < Topbar
+class ClientAppsPage
+  include Topbar
   include Capybara::DSL
   
   def initialize
