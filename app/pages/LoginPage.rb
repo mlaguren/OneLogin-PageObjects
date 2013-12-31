@@ -28,19 +28,23 @@ class LoginPage
   def forgot_password
     click_link('forgot_password')
   end
-  
+
+  # @deprecated
   def request_a_new_password
     find_link('request a new one').click
   end
-  
+
+  # @deprecated
   def go_to_support
     find_link('support').click
   end
-  
+
+  # @deprecated
   def go_to_downloads
     find_link('downloads').click
   end
-  
+
+  # @deprecated
   def go_to_privacy
     find_link('privacy').click
   end
