@@ -1,5 +1,5 @@
 class ClientAppsPage
-  include Topbar
+  include UserMenu 
   include Capybara::DSL
   
   def initialize

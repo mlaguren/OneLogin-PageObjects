@@ -1,4 +1,4 @@
-module Topbar
+module UserMenu 
   def initialize
     @logo = {"selector" => :id, "value"=>"logo"}
     @logout = {"selector" => :xpath, "value" => ".//*[@id='current_user']/a"}
