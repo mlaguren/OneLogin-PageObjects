@@ -8,8 +8,7 @@ class LoginPage
 # Define elements for interaction
   def initialize
     @url = $SETUP['url']
- #   @email_fld = {"selector" => :id, "value"=>"email"}
-    txt_fld("email", "id", "email")
+    @email_fld = {"selector" => :id, "value"=>"email"}
     @password_fld = {"selector" => :id, "value" => "password"}
     @login_btn = {"selector" => :id, "value" => "login"}
     @error = {"selector" => :id, "value" => "errors"}
