@@ -43,7 +43,6 @@ class ClientAppsPage
       #open_company_app
     end
     open_an_app
-    sleep 10
   end
   
   def launch_personal_app
