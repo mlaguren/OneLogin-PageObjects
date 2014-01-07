@@ -12,5 +12,8 @@ class EditPoliciesPage
     find(:xpath, ".//*[@id='tabs']/li/a/span[contains(.,'#{tab}')]").click
   end
 
+  def save_policy
+    click_button("Save") 
+  end
 end
 
