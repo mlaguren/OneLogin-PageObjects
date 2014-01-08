@@ -13,7 +13,8 @@ class EditPoliciesPage
   end
 
   def save_policy
-    click_button("Save") 
+    click_button("Save")
+    find(:id, "flashes") 
   end
 end
 

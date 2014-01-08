@@ -2,7 +2,6 @@ module NavigationBar
 
   def initialize
     @container = {"selector" => :xpath, "value" => ".//*[@class='navbar-inner']"}
-    @main_login = {"selector" => :id, "value" => "main_logo"}
   end
 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
@@ -25,6 +24,10 @@ module NavigationBar
         end
       end
     end
+  end
+
+  def go_to_home
+    find(:id, "main_logo").click
   end
         
 end
