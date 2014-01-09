@@ -3,6 +3,7 @@ class EditPoliciesPage
   include UserMenu
   include NavigationBar
   include SessionTab
+
   def initialize
     @tab_section = {"selector" => :xpath, "value" => ".//*[@class='nav nav-tabs thin with-tabs']"}
     super
@@ -14,7 +15,7 @@ class EditPoliciesPage
 
   def save_policy
     click_button("Save")
-    find(:id, "flashes") 
+    find(:id, "flashes")
   end
 end
 
