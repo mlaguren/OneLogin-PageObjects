@@ -6,7 +6,7 @@ class ClientAppsPage
   def initialize
     @tab = {"selector" => :xpath, "value" => ".//*[@class='tab']"}
     @appgroup = {"selector" => :xpath, "value" => ".//*[@class='tab-content appgroup']"} 
-    @app = {"selector" => :xpath, "value" => ".//*[@class='appicon']"}
+    @app = {"selector" => :css, "value" => "img.appicon"}
     super
   end
 
@@ -15,14 +15,8 @@ class ClientAppsPage
   end
   
   def select_any_app
-    begin
-      icon = find(@app['selector'], @app['value']).sample
-      p icon[:alt]
-      icon.click
-    rescue
-      select_any_tab
-      find(@app['selector'], @tab['value']).click
-    end
+      icon = all(@app['selector'], @app['value'])
+      icon.first.click
   end
     
   

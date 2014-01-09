@@ -15,7 +15,11 @@ class EditPoliciesPage
 
   def save_policy
     click_button("Save")
+
+    # needed to wait for save to complete before moving elsewhere.  Otherwise, selenium may return back to policy page.
+
     find(:id, "flashes")
+    find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 end
 

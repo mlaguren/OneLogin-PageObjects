@@ -11,6 +11,7 @@ class LoginPage
     @password_fld = {"selector" => :id, "value" => "password"}
     @login_btn = {"selector" => :id, "value" => "login"}
     @error = {"selector" => :id, "value" => "errors"}
+    @warning = {"selector" => :id, "value" => "notice"}
     @title = "OneLogin"
     @url = ENV['URL']
   end
@@ -28,6 +29,10 @@ class LoginPage
   
   def forgot_password
     click_link('forgot_password')
+  end
+
+  def receive_inactivity_warning
+    find(:id, "notice").text.should == "You have been logged out due to inactivity."
   end
 
   # @deprecated
@@ -54,5 +59,6 @@ class LoginPage
     find(@email_fld['selector'], @email_fld['value'])
     find(@password_fld['selector'], @password_fld['value'])
     page.has_title? @title 
-  end  
+  end
+  
 end
