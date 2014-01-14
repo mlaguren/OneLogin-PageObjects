@@ -10,6 +10,11 @@ class ClientAppsPage
     super
   end
 
+  def user_is_logged_in
+   #Need to handle username 
+    find(:xpath, ".//*[@class='dropdown-toggle']").text.should == 'Melvin Laguren'
+  end
+
   def select_any_tab
     find(@tab['selector'], @tab['value']).click
   end
