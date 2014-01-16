@@ -27,7 +27,7 @@ module NavigationBar
   end
 
   def go_to_home
-    find(:id, "main_logo").click
+    find(:xpath, ".//*[@class='brand']/img").click
   end
         
 end

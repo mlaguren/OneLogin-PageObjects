@@ -32,7 +32,7 @@ class LoginPage
   end
 
   def receive_inactivity_warning
-    find(:id, "notice").text.should == "You have been logged out due to inactivity."
+    find(@warning['selector'], @warning['value']).text.should == "You have been logged out due to inactivity."
   end
 
   # @deprecated
