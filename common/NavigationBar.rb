@@ -6,11 +6,10 @@ module NavigationBar
     @container = {"selector" => :xpath, "value" => ".//*[@class='navbar-inner']"}
   end
 
-# Documeting select_x
-# @method select_x(x_param)
+# Documenting select_menu
+# @method select_menu
 # @scope class
-# @param x_param foo
-#return 
+# return 
 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
     define_method("select_#{menu}") do
