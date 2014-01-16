@@ -19,8 +19,9 @@ module NavigationBar
   end
 
 # select_from_<menuname>_menu where <menuName> is Users, Apps, Activity, or Settings
-# @method select from_menuName_menu(submenu)
+# @method select_from_menuName_menu(submenu)
 # @param submenu is the submenu name
+# @scope class
 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
     define_method("select_from_#{menu}_menu") do |submenu|
