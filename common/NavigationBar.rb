@@ -1,3 +1,5 @@
+# Navigation Bar is a common component across several pages once authenticated in the app.
+
 module NavigationBar
 
   def initialize
@@ -12,6 +14,7 @@ module NavigationBar
     end
   end
 
+@!method 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
     define_method("select_from_#{menu}_menu") do |submenu|
       within(@container['selector'], @container['value']) do
