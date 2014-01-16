@@ -6,8 +6,8 @@ module NavigationBar
     @container = {"selector" => :xpath, "value" => ".//*[@class='navbar-inner']"}
   end
 
-# select_<menu> where menu is either Users, Apps, Activity, or Settings
-# @method select_<menu>
+# select_<menu> where <menu> is either Users, Apps, Activity, or Settings
+# @method select_menu
 # @scope class
 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
@@ -17,6 +17,10 @@ module NavigationBar
       end
     end
   end
+
+# select_from_<menuname>_menu where <menuName> is Users, Apps, Activity, or Settings
+# @method select from_menuName_menu(submenu)
+# @param submenu is the submenu name
 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
     define_method("select_from_#{menu}_menu") do |submenu|
