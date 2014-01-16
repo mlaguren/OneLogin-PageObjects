@@ -14,7 +14,6 @@ module NavigationBar
     end
   end
 
-@!method 
   ["Users", "Apps", "Activity", "Settings"].each do |menu|
     define_method("select_from_#{menu}_menu") do |submenu|
       within(@container['selector'], @container['value']) do
