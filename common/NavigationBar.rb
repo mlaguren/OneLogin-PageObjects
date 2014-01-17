@@ -18,16 +18,16 @@ module NavigationBar
     end
   end
 
-# select_from_<menuname>_menu where <menuName> is Users, Apps, Activity, or Settings
+# select_from_<menu_name>_menu where <menu_name> is users, apps, activity, or settings
 # @method select_from_menuName_menu(submenu)
 # @param submenu is the submenu name
 # @scope class
 
-  ["Users", "Apps", "Activity", "Settings"].each do |menu|
+  ["users", "apps", "activity", "settings"].each do |menu|
     define_method("select_from_#{menu}_menu") do |submenu|
       within(@container['selector'], @container['value']) do
         begin
-          find(:xpath, "//*[@class='#{menu.downcase} dropdown']").hover
+          find(:xpath, "//*[@class='#{menu} dropdown']").hover
           click_link("#{submenu}")
         rescue
           find(:xpath, "//*[@class='dropdown #{menu.downcase}']").hover
