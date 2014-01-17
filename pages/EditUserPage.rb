@@ -3,6 +3,10 @@ class EditUserPage
   include NavigationBar
   include Capybara::DSL
 
+  def initialize
+
+  end
+
 # select_<submenu>_from_more_actions_menu  where <submenu> is either change_password, send_invitation, show_user_details, delete, or create_new_user
 # @method select_submenu_from_more_actions_menu
 
