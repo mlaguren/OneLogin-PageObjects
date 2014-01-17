@@ -17,7 +17,7 @@ class NewUserPage
   end
 
   def click_save
-    click_link("Save")
+    click_link("Save User")
   end
 
   def click_cancel
