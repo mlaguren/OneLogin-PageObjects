@@ -12,7 +12,7 @@ class UsersPage
   end
 
 # select_<submenu>_from_more_actions_menu  where <submenu> is either Import Users, Bulk Operations, Custom User Fields, Approval All Users
-# @method select_<submenu>_from_more_actions_menu
+# @method select_submenu_from_more_actions_menu
 
   ["import_users", "bulk_operations", "custom_user_fields", "approve_all_users"].each do |sub_menu|
     define_method("select_#{sub_menu}_from_more_actions_menu") do 
