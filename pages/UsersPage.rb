@@ -1,4 +1,4 @@
-class NewUserPage
+class UsersPage
   include UserMenu
   include NavigationBar
   include Capybara::DSL
