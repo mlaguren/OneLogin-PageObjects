@@ -3,7 +3,6 @@
 
 class LoginPage
   include Capybara::DSL
-  include Selectors
   
 # Define elements for interaction
   def initialize
