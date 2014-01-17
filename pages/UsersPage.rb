@@ -11,7 +11,7 @@ class UsersPage
     click_link("New User")
   end
 
-# select_<submenu>_from_more_actions_menu  where <submenu> is either Import Users, Bulk Operations, Custom User Fields, Approval All Users
+# select_<submenu>_from_more_actions_menu  where <submenu> is either import_users, bulk_operations, custom_user_fields, approve_all_usersI
 # @method select_submenu_from_more_actions_menu
 
   ["import_users", "bulk_operations", "custom_user_fields", "approve_all_users"].each do |sub_menu|
