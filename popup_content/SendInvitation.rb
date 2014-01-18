@@ -1,0 +1,3 @@
+class SaveInvitation < PopUp
+
+end

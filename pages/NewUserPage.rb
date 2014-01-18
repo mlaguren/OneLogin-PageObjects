@@ -17,7 +17,9 @@ class NewUserPage
   end
 
   def click_save
-    click_link("Save User")
+    find(:id, "save_user").click 
+    find(:id, "flashes")
+    find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 
   def click_cancel
