@@ -21,9 +21,7 @@ class SignUpPage
     enter_your_email admin.email
     select('10-49',:from => 'orgsize')
     enter_your_phone admin.phone
-    File.open("admin.json","w") do |f|
-      f.write(admin.to_json)
-    end
+    admin.save_to_file(admin,"#{$admin_user_file}")
   end
 
   def terms(action)
