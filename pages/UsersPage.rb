@@ -13,8 +13,15 @@ class UsersPage
   end
 
   def select_user
-    @users = all(:xpath, ".//*[@class='js-click-row user']//h4")
-    @users[Random.new(@users.length)].click
+    users = all(:xpath, ".//*[@class='js-click-row user']//h4")
+    userlist=[]
+    users.each do |user|
+      p user.text
+      userlist.push("#{user.text}")
+    end
+    selected_user=userlist.sample 
+    find(:xpath, ".//*[@class='js-click-row user']//h4[contains(.,'#{selected_user}')]").click
+    return selected_user
   end
 
 # select_<submenu>_from_more_actions_menu  where <submenu> is either import_users, bulk_operations, custom_user_fields, approve_all_usersI
