@@ -4,11 +4,17 @@ class UsersPage
   include Capybara::DSL
 
   def initialize
-
-  end
+    find(:id, "main-content")
+    find(:id, "results")
+  end 
 
   def select_new_user
     click_link("New User")
+  end
+
+  def select_user
+    @users = all(:xpath, ".//*[@class='js-click-row user']//h4")
+    @users[Random.new(@users.length)].click
   end
 
 # select_<submenu>_from_more_actions_menu  where <submenu> is either import_users, bulk_operations, custom_user_fields, approve_all_usersI
@@ -23,4 +29,3 @@ class UsersPage
     end
   end
 end
-
