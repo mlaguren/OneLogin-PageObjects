@@ -8,6 +8,9 @@ class ClientAppsPage
     @appgroup = {"selector" => :xpath, "value" => ".//*[@class='tab-content appgroup']"} 
     @app = {"selector" => :css, "value" => "img.appicon"}
     super
+    sleep 5 
+    uri = URI.parse(current_url)
+    "#{uri.path}".should == "/client/apps"
   end
 
   def user_is_logged_in

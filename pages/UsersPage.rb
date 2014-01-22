@@ -5,7 +5,10 @@ class UsersPage
 
   def initialize
     find(:id, "main-content")
+    find(:xpath, ".//*[@id='main-content']/div")
+    sleep 5
     find(:id, "results")
+    super
   end 
 
   def select_new_user
@@ -16,7 +19,6 @@ class UsersPage
     users = all(:xpath, ".//*[@class='js-click-row user']//h4")
     userlist=[]
     users.each do |user|
-      p user.text
       userlist.push("#{user.text}")
     end
     selected_user=userlist.sample 
