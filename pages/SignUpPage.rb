@@ -19,7 +19,7 @@ class SignUpPage
     enter_your_lastname admin.last_name
     enter_your_company admin.company
     enter_your_email admin.email
-    select('10-49',:from => 'orgsize')
+#    select('10-49',:from => 'orgsize')
     enter_your_phone admin.phone
     admin.save_to_file(admin,"#{$admin_user_file}")
   end
