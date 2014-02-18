@@ -20,7 +20,7 @@ class User
   end  
 
   def email
-    @email_address = "#{@first.downcase}.#{@last.downcase}.65797ea4@clickity.me"
+    @email_address = "#{@first.downcase}.#{@last.downcase}.38a1661e@mailosaur.in"
     return @email_address  
   end
 
@@ -29,7 +29,7 @@ class User
   end
   
   def to_json
-    {'first'=>@first, 'last' => @last, 'company' => 'OneLogin Test', 'password' => :null, 'email' => @email_address, 'phone' => @phone}.to_json
+    {'first'=>@first, 'last' => @last, 'company' => 'OneLogin Test', 'password' => :null, 'email' => self.email, 'phone' => @phone}.to_json
   end
 
   def save_to_file(user, filename)
