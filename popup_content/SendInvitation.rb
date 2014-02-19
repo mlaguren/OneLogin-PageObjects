@@ -17,4 +17,8 @@ class SendInvitation < PopUp
     click_button('Send')
   end
 
+  def close_popup
+    click_button('Close')
+  end
+
 end
