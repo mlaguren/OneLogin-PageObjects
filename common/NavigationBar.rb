@@ -29,9 +29,11 @@ module NavigationBar
         begin
           find(:xpath, "//*[@class='#{menu} dropdown']").hover
           click_link("#{submenu}")
+          find(:xpath, "//*[@alt='Logo_default@2x']").hover
         rescue
           find(:xpath, "//*[@class='dropdown #{menu.downcase}']").hover
           click_link("#{submenu}")
+          find(:xpath, "//*[@alt='Logo_default@2x']").hover
         end
       end
     end
