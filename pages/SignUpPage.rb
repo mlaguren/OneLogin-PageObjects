@@ -7,7 +7,7 @@ class SignUpPage
     super
   end
   
-  ["firstname", "lastname", "company", "email", "phone"].each do |field|
+  ["firstname", "lastname", "company", "orgsize", "email", "phone"].each do |field|
     define_method("enter_your_#{field}") do |text|
       fill_in("#{field}", :with => text) 
     end
@@ -19,11 +19,12 @@ class SignUpPage
     enter_your_lastname admin.last_name
     enter_your_company admin.company
     enter_your_email admin.email
-#    select('10-49',:from => 'orgsize')
+    enter_your_orgsize rand(1000) 
     enter_your_phone admin.phone
     admin.save_to_file(admin,"#{$admin_user_file}")
   end
 
+  # @deprecated
   def terms(action)
     action == "agree" ? check('terms') : uncheck('terms') 
   end
