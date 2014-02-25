@@ -15,11 +15,15 @@ class UsersPage
     click_link("New User")
   end
 
-  def select_user
+  def select_user_to_assume
     users = all(:xpath, ".//*[@class='js-click-row user']//h4")
     userlist=[]
+    admin =  $SETUP['admin']['full']
     users.each do |user|
-      userlist.push("#{user.text}")
+      if user.text != admin
+        userlist.push("#{user.text}")
+        ap user.text
+      end
     end
     selected_user=userlist.sample 
     find(:xpath, ".//*[@class='js-click-row user']//h4[contains(.,'#{selected_user}')]").click
