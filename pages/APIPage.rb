@@ -8,6 +8,9 @@ class APIPage
 
   def get_api_key
     key = find(:id, "account_api_key").value
+    unless key.nil?
+      key = find(:id, "account_api_key").value
+    end
     return key
   end
 
