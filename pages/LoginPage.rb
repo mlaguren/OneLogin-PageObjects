@@ -12,7 +12,7 @@ class LoginPage
     @error = {"selector" => :id, "value" => "errors"}
     @warning = {"selector" => :id, "value" => "notice"}
     @title = "OneLogin"
-    #@url = ENV['URL']
+    @url = ENV['URL']
   end
   
   def login_as (email, password)
