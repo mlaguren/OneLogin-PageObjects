@@ -26,8 +26,7 @@ class APIPage
   end  
 
   def save_api_changes
-    click_button("Save")
-    find(:id, "flashes")
+    find(:css, ".btn.btn-primary").click
     find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 end
