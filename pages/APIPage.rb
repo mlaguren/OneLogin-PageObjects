@@ -16,7 +16,9 @@ class APIPage
 
   def generate_new_api_key(original_key)
     click_link("Generate new API key")
+    p original_key
     key = find(:id, "account_api_key").value
+    p key
     until key == original_key
       key = find(:id, "account_api_key").value
     end
