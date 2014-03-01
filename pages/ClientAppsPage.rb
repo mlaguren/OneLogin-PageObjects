@@ -24,6 +24,7 @@ class ClientAppsPage
   
   def select_any_app
       icon = all(@app['selector'], @app['value'])
+      p icon.length
       icon.first.click
   end
     
