@@ -9,7 +9,6 @@ class LoginPage
     @email_fld = {"selector" => :id, "value"=>"email"}
     @password_fld = {"selector" => :id, "value" => "password"}
     @login_btn = {"selector" => :id, "value" => "login"}
-    @error = {"selector" => :id, "value" => "errors"}
     @warning = {"selector" => :id, "value" => "notice"}
     @title = "OneLogin"
     @url = ENV['URL']
@@ -31,7 +30,14 @@ class LoginPage
   end
 
   def receive_inactivity_warning
-    find(@warning['selector'], @warning['value']).text.should == "You have been logged out due to inactivity."
+    windows = page.driver.browser.window_handles
+    if windows.length > 1
+      focus = windows.last
+      page.driver.browser.switch_to.window(focus)
+    end
+    notice = find(:id, "notice")
+    notice.text.should == "You have been logged out due to inactivity."
+    find(:id, "email")
   end
 
   # @deprecated

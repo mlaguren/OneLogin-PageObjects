@@ -9,10 +9,8 @@ module SessionTab
     session_value = find(:xpath, @inactivity['value']+"//*[@class='select2-chosen']")
     p session_value.text    
     if session_value.text == time
-      p "here"
       return true
     else
-      p "false"
       return false
     end 
   end

@@ -6,7 +6,7 @@ class ClientAppsPage
   def initialize
     @tab = {"selector" => :xpath, "value" => ".//*[@class='tab']"}
     @appgroup = {"selector" => :xpath, "value" => ".//*[@class='tab-content appgroup']"} 
-    @app = {"selector" => :css, "value" => "img.appicon"}
+    @app = {"selector" => :css, "value" => ".single-portal-app"}
     super
     sleep 5 
     uri = URI.parse(current_url)
