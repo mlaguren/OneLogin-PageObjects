@@ -16,7 +16,7 @@ class LoginPage
   
   def login_as (email, password)
     visit @url
-    p current_url
+    $log.debug("Logging in as #{email}i on #{current_url}")
     fill_in(@email_fld['value'], :with => email)
     fill_in(@password_fld['value'], :with => password)
     click_button(@login_btn['value'])  

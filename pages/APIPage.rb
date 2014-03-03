@@ -11,22 +11,21 @@ class APIPage
     unless key.nil?
       key = find(:id, "account_api_key").value
     end
+    $log.debug("Current API Key:  #{key}")
     return key
   end
 
   def generate_new_api_key(original_key)
     click_link("Generate new API key")
-    p original_key
     key = find(:id, "account_api_key").value
-    p key
     until key == original_key
       key = find(:id, "account_api_key").value
     end
-    p key
+    $log.debug("New Key: #{key}")
   end  
 
   def save_api_changes
     find(:css, ".btn.btn-primary").click
-    find(:xpath, ".//*[@class='btn btn-primary disabled']")
+    #find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 end
