@@ -11,11 +11,11 @@ class LoginPage
     @login_btn = {"selector" => :id, "value" => "login"}
     @warning = {"selector" => :id, "value" => "notice"}
     @title = "OneLogin"
-    @url = ENV['URL']
+    $url = ENV['URL']
   end
   
   def login_as (email, password)
-    visit @url
+    visit $url
     $log.debug("Logging in as #{email}i on #{current_url}")
     fill_in(@email_fld['value'], :with => email)
     fill_in(@password_fld['value'], :with => password)
