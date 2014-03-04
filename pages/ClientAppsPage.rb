@@ -25,8 +25,6 @@ class ClientAppsPage
   def select_any_app
       sleep 5
       icon = all(@app['selector'], @app['value'])
-      p "LOOOK HERE"
-      p icon.length
       icon.first.click
   end
     
