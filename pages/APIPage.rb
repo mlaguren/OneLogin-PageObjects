@@ -11,7 +11,6 @@ class APIPage
     unless key.nil?
       key = find(:id, "account_api_key").value
     end
-    p key
     $log.debug("Current API Key:  #{key}")
     return key
   end
@@ -27,6 +26,5 @@ class APIPage
 
   def save_api_changes
     find(:css, ".btn.btn-primary").click
-    #find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 end
