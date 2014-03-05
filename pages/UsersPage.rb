@@ -22,7 +22,6 @@ class UsersPage
     users.each do |user|
       if user.text != admin
         userlist.push("#{user.text}")
-        ap user.text
       end
     end
     selected_user=userlist.sample 

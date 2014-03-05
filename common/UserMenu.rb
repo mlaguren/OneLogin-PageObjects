@@ -4,8 +4,7 @@ module UserMenu
   end
 
   def select_revert_to_admin(user)
-    ap user
-    #find(@user_nav_menu['selector'], @user_nav_menu['values'])
+    $log.debug("Reverting back to #{user}")
     find('.dropdown-toggle', :text => "#{user}").hover
     click_link("Revert to admin")
   end
