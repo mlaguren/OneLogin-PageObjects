@@ -8,7 +8,7 @@ class ClientAppsPage
     @appgroup = {"selector" => :xpath, "value" => ".//*[@class='tab-content appgroup']"} 
     @app = {"selector" => :css, "value" => ".single-portal-app"}
     super
-    sleep 5 
+    sleep 2 
     uri = URI.parse(current_url)
     "#{uri.path}".should == "/client/apps"
   end
