@@ -29,7 +29,7 @@ class Company
   end
   
   def to_json
-    {'address1'=>@address1, 'address2' => @address2, 'city' => @city, 'state' => @state, 'zip' => @zip}.to_json
+    {"account_address1"=>@address1, "account_address2" => @address2, "account_city" => @city, "account_state" => @state, "account_zip" => @zip}.to_json
   end
 
   def save_to_file(user, filename)
