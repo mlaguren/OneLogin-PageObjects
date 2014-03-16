@@ -25,7 +25,8 @@ class UsersPage
       end
     end
     selected_user=userlist.sample 
-    find(:xpath, ".//*[@class='js-click-row user']//h4[contains(.,'#{selected_user}')]").click
+    $log.debug("Assuming #{selected_user}")
+    find(:xpath, ".//h4[contains(text(),'#{selected_user}')]").click
     return selected_user
   end
 
