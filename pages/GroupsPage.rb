@@ -9,5 +9,7 @@ class GroupsPage
     click_link('New Group')
   end
 
-
+  def find_group(group)
+    find(:xpath,".//td[contains(text(),'#{group}')]")
+  end
 end
