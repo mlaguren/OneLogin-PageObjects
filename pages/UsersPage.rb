@@ -24,6 +24,10 @@ class UsersPage
         userlist.push("#{user.text}")
       end
     end
+    
+    # Sometimes in staging, we are getting duplicate users.  Check for it then call failure here.
+
+    userlist.uniq.length.should == userlist.length
     selected_user=userlist.sample 
     $log.debug("Assuming #{selected_user}")
     find(:xpath, ".//h4[contains(text(),'#{selected_user}')]").click
