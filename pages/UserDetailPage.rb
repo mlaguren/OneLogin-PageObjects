@@ -11,4 +11,7 @@ class UserDetailPage
     find('.dropdown-toggle', :text => "#{username}")
   end
 
+  def group_member_of(group)
+    find(:xpath,".//*[@id='s2id_user_group_id']")
+  end
 end
