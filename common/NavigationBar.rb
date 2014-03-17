@@ -3,7 +3,7 @@
 module NavigationBar
 
   def initialize
-    @container = {"selector" => :xpath, "value" => ".//*[@class='navbar-inner']"}
+    @container = {"selector" => :xpath, "value" => ".//*[@class='nav']"}
   end
 
 # select_<menu> where <menu> is either Users, Apps, Activity, or Settings

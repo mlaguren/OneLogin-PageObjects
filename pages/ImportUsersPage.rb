@@ -1,10 +1,10 @@
 class ImportUsersPage
-  include Capybara::DSL
   include UserMenu
   include NavigationBar
+  include Capybara::DSL
 
   def initialize
-
+    super
   end
 
   def upload_csv

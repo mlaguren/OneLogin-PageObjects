@@ -15,6 +15,10 @@ class User
     return @last
   end
 
+  def full_name
+    full_name = "#{@first} #{@last}"
+  end
+
   def company
     return @company
   end  
