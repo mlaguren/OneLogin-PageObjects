@@ -45,8 +45,11 @@ class UsersPage
     define_method("select_#{sub_menu}_from_more_actions_menu") do 
       within(:xpath, ".//*[@class='btn-toolbar pull-right nav']//*[@class='dropdown']") do
         find(:id, 'more-actions').hover
-        sleep 1
-        click_link("#{sub_menu.gsub!(/_+/, " ").split.each{|i| i.capitalize!}.join(' ')}")
+        begin 
+          click_link("#{sub_menu.gsub!(/_+/, " ").split.each{|i| i.capitalize!}.join(' ')}")
+        rescue
+          click_link("#{sub_menu.split.each{|i| i.capitalize!}.join(' ')}")
+        end
       end
     end
   end
