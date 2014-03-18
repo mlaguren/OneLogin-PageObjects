@@ -14,4 +14,14 @@ class ImportUsersPage
     click_button('Upload')
   end
 
+  def failed_to_upload_message
+    find(:id, 'flasherror').text.should == 'Could not import file'
+  end
+
+  def display_reason
+    find(:xpath, ".//*[@id='main-content']/form/div[3]/p/strong").text.should == 'The import did not complete because of the following errors:'
+  end
+
 end
+
+
