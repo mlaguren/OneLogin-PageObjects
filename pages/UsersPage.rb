@@ -34,6 +34,10 @@ class UsersPage
     return selected_user
   end
 
+  def member_of_group(group_name)
+    find(:xpath, ".//*[@id='s2id_user_group_id']//*[@class='select2-chosen'][contains(text(), 'Import Group')]")
+  end
+
 # select_<submenu>_from_more_actions_menu  where <submenu> is either import_users, bulk_operations, custom_user_fields, approve_all_usersI
 # @method select_submenu_from_more_actions_menu
 
