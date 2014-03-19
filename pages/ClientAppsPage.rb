@@ -32,5 +32,29 @@ class ClientAppsPage
       icon.first.click
   end
     
+  def edit_app
+    find(:xpath, ".//*[@class='edit-apps']").click
+    sleep 5
+  end  
+
+  def toggle_view
+    begin
+      find(:css, ".portal-icon-view").click
+      $log.debug("Switching to icon view")
+      find(:css, ".portal-list-view")
+      state=".portal-list-view"
+    rescue
+      find(:css, ".portal-list-view").click
+      $log.debug("Switching to list view")
+      find(:css, ".portal-icon-view")
+      state=".portal-icon-view"
+    end
+    return state
+  end
   
+  def switch_view_to(view)
+    find(:css, view).click
+    active=view+".active"
+    find(:css, active)
+  end
 end
