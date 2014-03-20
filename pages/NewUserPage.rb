@@ -16,6 +16,16 @@ class NewUserPage
     fill_in(@email['value'], :with => created_user.email)
   end
 
+  def enter_user_with_apostrophe(created_user)
+
+    new_last_name=created_user.last_name+"'"
+
+    fill_in(@firstName['value'], :with => created_user.first_name)
+    fill_in(@lastName['value'], :with => new_last_name)
+    fill_in(@email['value'], :with => created_user.email)
+ 
+  end
+
   def click_save
     find(:id, "save_user").click 
     find(:id, "flashes")
