@@ -27,4 +27,5 @@ class APIPage
   def save_api_changes
     find(:css, ".btn.btn-primary").click
   end
+
 end
