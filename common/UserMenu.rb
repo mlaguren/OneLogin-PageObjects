@@ -6,7 +6,7 @@ module UserMenu
   def select_revert_to_admin(user)
     $log.debug("Reverting back to #{user}")
     find('.dropdown-toggle', :text => "#{user}").hover
-    click_link("Revert to admin")
+    click_link("Revert to Admin")
   end
 
   def log_out
