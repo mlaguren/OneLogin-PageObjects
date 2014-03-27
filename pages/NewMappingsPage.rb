@@ -20,7 +20,7 @@ class NewMappingsPage
     mapping="mapping"+Time.now.to_s
     enter_mapping_name(mapping)
     click_button('Save')
-    find(:id, 'flashnotice').text.should == 'Mapping was successfully created.'
+    find(:id, 'flashnotice').text.should == 'Mapping was successfully created. x'
     $log.debug("#{mapping} mapping created")
     find(:id, 'reapply_link')
     return mapping
