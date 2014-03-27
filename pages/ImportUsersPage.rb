@@ -15,7 +15,7 @@ class ImportUsersPage
   end
 
   def failed_to_upload_message
-    find(:id, ".//*[@id="flasherror"]//*[@class='container']").text.should == 'Could not import file'
+    find(:id, ".//*[@id='flasherror']//*[@class='container']").text.should == 'Could not import file'
   end
 
   def display_reason
