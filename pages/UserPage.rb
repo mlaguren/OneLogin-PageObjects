@@ -18,10 +18,7 @@ class UserPage
     if text = privilege
       find(:xpath, './/*[@value="Continue"]').click
     end
-    array = page.all(:xpath, ".//*[@class='table privileges']//tbody//td")
-    p array
-    array.each {|value|  print value }
-    sleep 5
+
   end
 
 end
