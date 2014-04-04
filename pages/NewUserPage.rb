@@ -28,7 +28,7 @@ class NewUserPage
 
   def click_save
     find(:id, "save_user").click 
-    find(:id, "flashes")
+    find(:xpath, ".//*[@id='flashnotice']//*[@class='container']")
     find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 
