@@ -15,7 +15,7 @@ class UserPage
       find(:xpath, './/*[@class="select2-choice"]').click
     }
     text = find(:xpath, './/*[@id="s2id_operation_id"]//*[@class="select2-chosen"]').text
-    if text = privilege
+    if text == privilege
       find(:xpath, './/*[@value="Continue"]').click
     end
 
