@@ -18,6 +18,7 @@ class UserPage
     if text == privilege
       find(:xpath, './/*[@value="Continue"]').click
     end
+    sleep 1
 
   end
 
