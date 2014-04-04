@@ -23,7 +23,7 @@ class CompanyInfoPage
 
   def save_company_info
     click_button("Save")
-    find(:id, "flashes")
+    find(:xpath, ".//*[@id='flashnotice']//*[@class='container']")
     find(:xpath, ".//*[@class='btn btn-primary disabled']")
   end
 
