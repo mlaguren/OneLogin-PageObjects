@@ -38,23 +38,25 @@ class ClientAppsPage
   end  
 
   def toggle_view
+    sleep 1
     begin
-      find(:css, ".portal-icon-view").click
+      find(:css, "a.portal-icon-view.active").click
       $log.debug("Switching to icon view")
-      find(:css, ".portal-list-view")
-      state=".portal-list-view"
+      find(:css, "a.portal-list-view.active")
+      state="a.portal-list-view.active"
+      p "Switched to icon view i"
     rescue
-      find(:css, ".portal-list-view").click
+      find(:css, "a.portal-list-view.active").click
       $log.debug("Switching to list view")
-      find(:css, ".portal-icon-view")
-      state=".portal-icon-view"
+      find(:css, "a.portal-icon-view.active")
+      p "Switched to list view"
+      state="a.portal-icon-view.active"
     end
     return state
   end
   
   def switch_view_to(view)
-    find(:css, view).click
-    active=view+".active"
-    find(:css, active)
+    p view
+    find(:css, "#{view}").click
   end
 end
