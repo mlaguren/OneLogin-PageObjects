@@ -11,7 +11,7 @@ class EditUserPage
 # @method select_submenu_from_more_actions_menu
 # @scope class
 
-  ["change_password", "send_invitation", "show_user_details", "delete", "create_new_user"].each do |sub_menu|
+  ["assume_user", "change_password", "send_invitation", "show_user_details", "delete", "create_new_user"].each do |sub_menu|
     define_method("select_#{sub_menu}_from_more_actions_menu") do
       within(:xpath, ".//*[@class='btn-toolbar pull-right nav']") do
         find(:id, 'more-actions').hover

@@ -5,6 +5,7 @@ class UserDetailPage
   def initialize
   end
 
+  # @deprecated
   def assume_user(username)
     click_link 'Assume User'
     #find(:xpath, ".//*[@class='dropdown-toggle']").text.should == username
