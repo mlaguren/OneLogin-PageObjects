@@ -1,4 +1,4 @@
-class User
+class LdapServer
 
   def initialize
     @dirIdentifier="Test"

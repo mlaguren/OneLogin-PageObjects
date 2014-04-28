@@ -8,6 +8,8 @@ class DirectoriesPage
 
   def select_directory_type(type)
 
-    find(:xpath, './/*[contains(text(),"LDAP via Connector")]').click
+    #  Need to add additional code for when directories have already been configured
+
+    find(:xpath, ".//*[contains(text(),'#{type}')]").click
   end 
 end
