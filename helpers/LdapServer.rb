@@ -1,8 +1,9 @@
 class LdapServer
 
   def initialize
-    @dirIdentifier="Test"
-    @ol_directory = "test"
+    ldap_name = Time.now
+    @dirIdentifier="LDAP_Server"+ldap_name.strftime("%Y%m%d+%T")
+    @ol_directory = "LDAP #{ldap_name.strftime("%Y%m%d+%T")}"
   end
 
   def directory_name
