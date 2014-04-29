@@ -12,5 +12,7 @@ class LdapConnectorPage
     find(:xpath, ".//*[@class='editable editable-click']").text.should == ldap_directory.directory_name
 
     fill_in('directory_name', :with => ldap_directory.onelogin_directory)
+    
+    click_on('Save')
   end 
 end

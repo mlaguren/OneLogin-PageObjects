@@ -7,9 +7,10 @@ class DirectoriesPage
   end
 
   def select_directory_type(type)
-
-    #  Need to add additional code for when directories have already been configured
-
+    unless (find(:xpath, './/*[@class="btn btn-primary"]').nil?)
+      find(:xpath, './/*[@class="btn btn-primary"]').click
+    end  
     find(:xpath, ".//*[contains(text(),'#{type}')]").click
   end 
+
 end
