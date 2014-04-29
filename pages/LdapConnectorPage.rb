@@ -17,11 +17,14 @@ class LdapConnectorPage
   end 
 
   def get_installation_token
-    unless find(:xpath, './/*[@class="grayfield tiny token-field"]').nil?
-      find(:xpath,'.//*[@class="directory_connector"]').click
+    if page.has_selector?(:xpath, './/*[@class="grayfield tiny token-field"]')
+      installation_token = find(:xpath, './/*[@class="grayfield tiny token-field"]').text
+    else
+      find(:xpath,'.//*[@class="directory_connector"]//*[@class="span4 name"]').click
+      installation_token = find(:xpath, './/*[@class="grayfield tiny token-field"]').text
     end
-    installation_token = find(:xpath, './/*[@class="grayfield tiny token-field"]').text
     p installation_token 
+    return installation_token
   end
 
 end
